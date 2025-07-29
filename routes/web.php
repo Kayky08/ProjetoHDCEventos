@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+//Criando a rota para o Home e mandando variaveis para serem exibidas
 Route::get('/', function () {
     $nome = "Pedro";
     $idade = 19;
@@ -17,6 +18,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/products', function (){
+//Utilizando layout para criar uma pagina
+Route::get('/produtos', function (){
     return view('products');
+});
+
+//Enviando parametros para resgatar pela pagina
+Route::get('/produto/{id?}', function ($id = null){
+    return view('product', ['id' => $id]);
 });

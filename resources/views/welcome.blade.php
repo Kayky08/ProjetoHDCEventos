@@ -40,3 +40,4 @@
 @endphp
 
 {{--Comentario em Blade--}}
+@endsection
