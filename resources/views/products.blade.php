@@ -5,4 +5,8 @@
 
 <h1>Tela de Produtos</h1>
 
+@if($busca != null)
+    <p>O usuario esta buscando por: {{$busca}}</p>
+@endif
+
 @endsection

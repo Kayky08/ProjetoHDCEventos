@@ -18,9 +18,12 @@ Route::get('/', function () {
     ]);
 });
 
-//Utilizando layout para criar uma pagina
+//Fazendo uma view que pode ou não receber parametros
 Route::get('/produtos', function (){
-    return view('products');
+    //Fazendo uma requizição
+    $busca = request('search');
+
+    return view('products', ['busca' => $busca]);
 });
 
 //Enviando parametros para resgatar pela pagina
