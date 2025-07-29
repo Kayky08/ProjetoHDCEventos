@@ -25,16 +25,16 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Eventos</a>
+                            <a href="/" class="nav-link">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Criar Eventos</a>
+                            <a href="/eventos/criar" class="nav-link">Criar Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Entrar</a>
+                            <a href="/" class="nav-link">Entrar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Cadastrar</a>
+                            <a href="/-+" class="nav-link">Cadastrar</a>
                         </li>
                     </ul>
                 </div>
@@ -46,5 +46,8 @@
         <footer>
             <p>HDC Events &copy; 2025</p>
         </footer>
+
+        <!--Icones-->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>

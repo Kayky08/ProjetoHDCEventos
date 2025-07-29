@@ -1,22 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
-//Criando a rota para o Home e mandando variaveis para serem exibidas
-Route::get('/', function () {
-    $nome = "Pedro";
-    $idade = 19;
-
-    $array = [3,5,7,9,11];
-    $nomes = ["Andre","Fabiana","Luan","Patricia","Umberto"];
-
-    return view('welcome', [
-        'nome' => $nome,
-        'idade' => $idade,
-        'array' => $array,
-        'nomes' => $nomes
-    ]);
-});
+//Criando rotas e conectando com o controller
+Route::get('/', [EventController::class, 'index']);//Home
+Route::get('/eventos/criar', [EventController::class, 'create']);//Criar
 
 //Fazendo uma view que pode ou não receber parametros
 Route::get('/produtos', function (){
