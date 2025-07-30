@@ -14,6 +14,16 @@ header{
     border-bottom: 1px solid #CCC;
 }
 
+.msg{
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
 .row{
     margin: 0;
 }
@@ -132,4 +142,20 @@ footer{
 
 footer p{
     margin-bottom: 0;
+}
+
+/*Event Create Page*/
+#event-create-container{
+    padding: 30px;
+}
+
+#event-create-container label{
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea{
+    font-size: 12px;
+    margin: 10px;
 }

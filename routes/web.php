@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 
+//Criando rotas e conectando com o controller
+Route::get('/', [EventController::class, 'index']);//Home
+Route::get('/eventos/criar', [EventController::class, 'create']);//Criar
+Route::post('/eventos', [EventController::class, 'store']);//
+
 /**
  * CASO NÃO FUNCIONE O PROJETO:
  * 
@@ -33,7 +38,3 @@ use App\Http\Controllers\EventController;
     para voltar todas as migrations: php artisan migrate:reset
     para voltar todas as migrations e rodar novamente: php artisan migrate:refresh
 */
-
-//Criando rotas e conectando com o controller
-Route::get('/', [EventController::class, 'index']);//Home
-Route::get('/eventos/criar', [EventController::class, 'create']);//Criar
