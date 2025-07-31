@@ -33,8 +33,13 @@ class EventController extends Controller
             $extension = $requestImage->extension();
 
             //Criando um nome unico para a imagem
-            $imageName = md5($requestImage->image->getClientOriginalName() . strtotime('now'));
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) . "." . $extension;
 
+            //Fazendo o upload da imagem no caminho correto
+            $requestImage->move(public_path('img/events/'), $imageName);
+
+            //Salvando o caminho da imagem
+            $event->image = $imageName;
         }
 
         $event->save();
