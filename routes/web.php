@@ -5,8 +5,9 @@ use App\Http\Controllers\EventController;
 
 //Criando rotas e conectando com o controller
 Route::get('/', [EventController::class, 'index']);//Home
-Route::get('/eventos/criar', [EventController::class, 'create']);//Criar
-Route::post('/eventos', [EventController::class, 'store']);//
+Route::get('/eventos/criar', [EventController::class, 'create'])->middleware('auth');//Criar
+Route::get('/eventos/{id}', [EventController::class, 'show']);//Mostrar
+Route::post('/eventos', [EventController::class, 'store']);//Enviar dados no banco
 
 /**
  * CASO NÃO FUNCIONE O PROJETO:
@@ -40,3 +41,12 @@ Route::post('/eventos', [EventController::class, 'store']);//
  *   para voltar todas as migrations: php artisan migrate:reset
  *   para voltar todas as migrations e rodar novamente: php artisan migrate:refresh
 */
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
